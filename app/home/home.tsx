@@ -4,10 +4,10 @@ export default function Home() {
 	return (
 		<div className="w-full h-screen flex justify-center px-[10%] md:px-[15%] lg:px-[15%]">
 			<div className="w-full flex flex-col md:flex-row">
-				<div className="w-full md:w-1/2 flex items-center justify-center font-extrabold text-6xl md:text-2xl font-black p-4">
+				<div className="w-full md:w-1/2 flex items-center justify-center font-normal text-6xl md:text-2xl font-black p-4">
 					<div>
-						<h1 className="text-5xl mb-4">Michael Boyd</h1>
-						<p className="font-normal mb-4">Software Engineer</p>
+						<h1 className="text-5xl font-black mb-4">Michael Boyd</h1>
+						<p className="text-3xl mb-4">Software Engineer</p>
 						<ul className="flex flex-wrap gap-2 mb-4">
 							{pills.map((pill, index) => (
 								<li
