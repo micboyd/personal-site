@@ -7,8 +7,7 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
-		"pretty": "npx prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\"",
-        "export": "next export"
+		"pretty": "npx prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\""
 	},
 	"dependencies": {
 		"next": "15.1.7",
