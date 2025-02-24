@@ -10,6 +10,7 @@ export default {
 		extend: {
             fontFamily: {
                 jakarta: ["Plus Jakarta Sans", "sans-serif"],
+                lora: ["Lora", "serif"],
               },
 			colors: {
 				background: 'var(--background)',

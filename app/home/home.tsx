@@ -1,22 +1,12 @@
 export default function Home() {
-	const pills = ['TypeScript', 'Angular', 'React', 'Next', 'Tailwind', 'CSS', 'Node.js', 'MongoDB'];
-
 	return (
-		<div className="w-full h-screen bg-stone-950 text-white flex justify-center px-[10%] md:px-[15%] lg:px-[15%]">
+		<div className="w-full h-screen bg-stone-950 text-white tracking-wide flex justify-center px-[10%] md:px-[15%] lg:px-[15%]">
 			<div className="w-full flex flex-col md:flex-row">
 				<div className="w-full md:w-1/2 flex items-center justify-center font-normal text-6xl md:text-2xl font-black p-4">
 					<div>
-						<h1 className="text-5xl font-black  mb-4">Michael Boyd</h1>
-						<p className="text-3xl mb-4">Software Engineer, Edinburgh</p>
-						<ul className="flex flex-wrap gap-2 mb-4">
-							{pills.map((pill, index) => (
-								<li
-									key={index}
-									className="px-3 py-1 bg-white text-black text-sm font-medium rounded-full">
-									{pill}
-								</li>
-							))}
-						</ul>
+						<h1 className="text-6xl font-black mb-4 font-lora">Michael Boyd</h1>
+						<p className="text-3xl mb-4">Software Engineer</p>
+						<p className="text-lg uppercase font-black">Edinburgh</p>
 					</div>
 				</div>
 				<div className="w-full md:w-1/2 flex flex-col md:flex-row items-center justify-center gap-4">
