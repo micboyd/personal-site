@@ -1,24 +1,20 @@
-import './globals.css';
-
-import { DM_Sans } from 'next/font/google';
-import Home from './home/home';
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
+import Home from './page';
 
-const dmSans = DM_Sans({
-	variable: '--font-dm-sans',
-	subsets: ['latin'],
-});
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-	title: 'Michael Boyd - Software Engineer',
+	title: 'My Next.js App',
+	description: 'A Next.js 13+ app',
 };
 
-export default function RootLayout() {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en">
-			<body className={`${dmSans.variable} antialiased`}>
-				<Home></Home>
-			</body>
+			<body className={`${inter.className} font-jakarta antialiased`}>{children}</body>
 		</html>
 	);
 }
+
