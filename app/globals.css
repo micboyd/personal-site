@@ -1,3 +1,6 @@
+@import '@fontsource/cormorant';
+@import '@fontsource/dm-sans';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

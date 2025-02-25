@@ -9,8 +9,8 @@ export default {
 	theme: {
 		extend: {
             fontFamily: {
-                jakarta: ["Plus Jakarta Sans", "sans-serif"],
-                lora: ["Lora", "serif"],
+                serif: ['Cormorant', 'serif'],
+                sans: ['DM Sans', 'sans-serif'],
               },
 			colors: {
 				background: 'var(--background)',
