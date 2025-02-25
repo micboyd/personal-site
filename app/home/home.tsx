@@ -10,8 +10,8 @@ export default function Home() {
 			<div className="w-full flex flex-col md:flex-row">
 				<div className="w-full md:w-1/2 flex items-center justify-center font-normal text-6xl text-center md:text-left md:text-2xl font-black p-4">
 					<div>
-						<h1 className="text-6xl font-black mb-4 font-lora antialiased">Michael Boyd</h1>
-						<p className="text-3xl mb-4">Software Engineer</p>
+						<h1 className="text-4xl font-black mb-4 font-lora antialiased">Michael Boyd</h1>
+						<p className="text-2xl mb-4">Software Engineer</p>
                         <p className="mb-4 flex items-center gap-2 group">
                             <a aria-label='email me' href="mailto:michael_boyd@live.co.uk">
                                 <FontAwesomeIcon icon={faEnvelope} />
