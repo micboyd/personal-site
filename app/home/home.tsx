@@ -1,3 +1,5 @@
+import BackgroundPanel from "../components/backgroundPanel/background-panel"
+
 export default function Home() {
 	return (
 		<div className="w-full h-screen flex justify-center font-sans antialiased px-[10%] md:px-[15%] lg:px-[15%]">
@@ -9,14 +11,8 @@ export default function Home() {
 					</div>
 				</div>
 				<div className="w-full md:w-1/2 flex flex-col md:flex-row items-center justify-center gap-4">
-					<div
-						className="relative w-full md:w-1/2 h-40 md:h-1/2 bg-cover bg-center rounded-xl"
-						style={{ backgroundImage: "url('https://i.imghippo.com/files/EVQe8109CS.jpg')" }}>
-					</div>
-					<div
-						className="relative w-full md:w-1/2 h-40 md:h-1/2 bg-cover bg-center rounded-xl"
-						style={{ backgroundImage: "url('https://i.imghippo.com/files/Ozra8396xxE.jpg')" }}>
-					</div>
+                    <BackgroundPanel backgroundUrl="https://i.imghippo.com/files/EVQe8109CS.jpg"></BackgroundPanel>
+                    <BackgroundPanel backgroundUrl="https://i.imghippo.com/files/Ozra8396xxE.jpg"></BackgroundPanel>
 				</div>
 			</div>
 		</div>
