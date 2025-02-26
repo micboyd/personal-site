@@ -16,11 +16,11 @@ export default function Home() {
 					<h1 className="text-4xl font-extrabold mb-4 font-lora antialiased">Michael Boyd</h1>
 					<p className="text-2xl font-medium mb-4">Software Engineer</p>
 					<p className="text-sm font-light w-full md:w-[50%] mb-4">
-						Hello, I'm Michael, a Software Engineer located in Edinburgh, Scotland. My expertise lies in
+						Hello, I&apos;m Michael, a Software Engineer located in Edinburgh, Scotland. My expertise lies in
 						harnessing advanced technologies, with a strong emphasis on Front-End Engineering.
 					</p>
 					<p className="text-sm font-light w-full md:w-[50%] mb-4">
-						Beyond my professional life, I'm passionate about landscape & wildlife Photography.
+						Beyond my professional life, I&apos;m passionate about landscape & wildlife Photography.
 					</p>
 					<div className="w-full md:w-[50%] mb-4 text-sm">
 						<div className="flex flex-wrap gap-2 justify-center md:justify-start">

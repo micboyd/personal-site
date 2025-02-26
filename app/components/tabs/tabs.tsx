@@ -1,4 +1,3 @@
-import CustomSelect from '../dropdown';
 import { useState } from 'react';
 
 const Tabs = () => {
