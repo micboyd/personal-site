@@ -10,7 +10,7 @@ export default function Home() {
 	const skills = ['JavaScript', 'React', 'Angular', 'CSS', 'Git', 'Node', 'MongoDB', 'SQL', 'Rest API', 'GraphQL'];
 
 	return (
-		<div className="w-full h-screen flex flex-col md:flex-row justify-center font-san font-normal antialiased px-[10%] md:px-[15%] lg:px-[15%]">
+		<div className="w-full h-screen flex flex-col md:flex-row justify-center font-san font-normal antialiased mt-[10%] mb-[10%] sm:mt-0 sm:mb-0 px-[10%] md:px-[15%] lg:px-[15%]">
 			<div className="w-full md:w-1/2 flex flex-col items-center justify-center text-center md:text-left font-black p-4">
 				<div>
 					<h1 className="text-4xl font-extrabold mb-4 font-lora antialiased">Michael Boyd</h1>
