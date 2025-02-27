@@ -10,10 +10,10 @@ export default function Home() {
 	const skills = ['JavaScript', 'React', 'Angular', 'CSS', 'Git', 'Node', 'MongoDB', 'SQL', 'Rest API', 'GraphQL'];
 
 	return (
-		<div className="w-full h-screen flex justify-center font-san font-normal antialiased px-[20%]">
-			<div className="w-full flex gap-4">
-				<div className="w-1/3 flex flex-col items-center justify-center text-center md:text-left font-black">
-					<div className="w-full  pr-4">
+		<div className="w-full min-h-screen flex justify-center font-san font-normal antialiased px-4 md:px-[20%] pt-10 md:pt-0">
+			<div className="w-full flex flex-col md:flex-row gap-4">
+				<div className="w-full md:w-1/3 flex flex-col items-center justify-center text-center md:text-left font-black">
+					<div className="w-full md:pr-4">
 						<h1 className="text-4xl font-extrabold mb-4 font-lora antialiased">Michael Boyd</h1>
 						<p className="text-2xl font-medium mb-4">Software Engineer</p>
 						<p className="text-sm font-light w-full mb-4">
@@ -45,10 +45,10 @@ export default function Home() {
 						</p>
 					</div>
 				</div>
-				<div className="w-1/3 flex items-center justify-center">
+				<div className="w-full md:w-1/3 flex items-center justify-center">
 					<BackgroundPanel backgroundUrl="https://i.imghippo.com/files/EVQe8109CS.jpg" />
 				</div>
-				<div className="w-1/3 flex items-center justify-center">
+				<div className="w-full md:w-1/3 flex items-center justify-center">
 					<BackgroundPanel backgroundUrl="https://i.imghippo.com/files/Ozra8396xxE.jpg" />
 				</div>
 			</div>
