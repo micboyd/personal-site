@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 export default function Home() {
-	const skills = ['JavaScript', 'React', 'Angular', 'CSS', 'Git', 'Node', 'MongoDB', 'SQL', 'Rest API', 'GraphQL'];
+	const skills = ['JavaScript', 'TypeScript', 'React', 'Angular', 'CSS', 'Git', 'Node', 'MongoDB', 'SQL', 'Rest API', 'GraphQL'];
 
 	return (
 		<div className="w-full min-h-screen flex justify-center font-san font-normal antialiased px-4 md:px-[20%] pt-10 md:pt-0">
