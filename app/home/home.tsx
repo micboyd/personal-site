@@ -45,10 +45,10 @@ export default function Home() {
 					</div>
 				</div>
 				<div className="w-full md:w-1/3 flex items-center justify-center">
-					<BackgroundPanel backgroundUrl="https://www.imghippo.com/i/tn9640iuI.jpg" />
+					<BackgroundPanel backgroundUrl="https://i.imghippo.com/files/tn9640iuI.jpg" />
 				</div>
 				<div className="w-full md:w-1/3 flex items-center justify-center">
-					<BackgroundPanel backgroundUrl="https://www.imghippo.com/i/jEN6727yk.jpg" />
+					<BackgroundPanel backgroundUrl="https://i.imghippo.com/files/jEN6727yk.jpg" />
 				</div>
 			</div>
 		</div>
