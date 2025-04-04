@@ -1,30 +1,31 @@
+import Experience from '@/app/home/tabs/experience';
+import Profile from '@/app/home/tabs/profile';
 import { useState } from 'react';
 
 const Tabs = () => {
 	const tabs = [
-		{ title: 'Home', content: 'Welcome to the Home tab!' },
-		{ title: 'Profile', content: 'This is the Profile section.' },
-		{ title: 'Settings', content: 'hi there' },
+		{ title: 'Profile', content: <Profile></Profile> },
+		{ title: 'Experience', content: <Experience></Experience> }
 	];
 
 	const [activeTab, setActiveTab] = useState(tabs[0].title);
 
 	return (
-		<div className="w-full bg-black flex justify-center items-center px-[10%] md:px-[15%] lg:px-[15%]">
-			<div className="w-full p-4 bg-gray-900 rounded-2xl shadow-lg">
-				<div className="flex space-x-2 border-b border-gray-700 pb-2">
+		<div className="w-full flex justify-center font-san font-normal antialiased">
+			<div className="w-full">
+				<div className="flex space-x-2 pb-2 mb-6">
 					{tabs.map(tab => (
-						<button
-							key={tab.title}
-							onClick={() => setActiveTab(tab.title)}
-							className={`px-4 py-2 text-sm font-medium rounded-t-lg transition-all duration-300 
-          ${activeTab === tab.title ? 'bg-blue-500 text-white' : 'bg-gray-800 text-gray-300 hover:bg-gray-700'}`}>
-							{tab.title}
-						</button>
+                        <span className='pr-4' key={tab.title}>
+                            <button
+                                onClick={() => setActiveTab(tab.title)}
+                                className={` pb-1 border-b-2 transition-all duration-300 ${activeTab === tab.title ? 'border-purple-500' : 'border-transparent'}`}>
+                                {tab.title}
+                            </button>
+                        </span>
 					))}
 				</div>
 
-				<div className="p-4 mt-2 text-white">
+				<div className="">
 					{tabs.map(tab => (
 						<div
 							key={tab.title}

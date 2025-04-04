@@ -10,7 +10,6 @@ export default {
 		extend: {
             fontFamily: {
                 sans: ['DM Sans', 'sans-serif'],
-                lora: ['Lora', 'serif']
               },
 			colors: {
 				background: 'var(--background)',
