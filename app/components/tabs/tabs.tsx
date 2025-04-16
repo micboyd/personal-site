@@ -1,4 +1,3 @@
-import Experience from '@/app/home/tabs/experience';
 import Profile from '@/app/home/tabs/profile';
 import { useState } from 'react';
 
