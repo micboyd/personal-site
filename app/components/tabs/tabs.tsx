@@ -4,8 +4,7 @@ import { useState } from 'react';
 
 const Tabs = () => {
 	const tabs = [
-		{ title: 'Profile', content: <Profile></Profile> },
-		{ title: 'Experience', content: <Experience></Experience> }
+		{ title: 'Profile', content: <Profile></Profile> }
 	];
 
 	const [activeTab, setActiveTab] = useState(tabs[0].title);
