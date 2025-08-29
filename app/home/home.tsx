@@ -13,10 +13,10 @@ export default function Home() {
 					</div>
 				</div>
 				<div className="w-full md:w-1/3 flex items-center justify-center">
-					<BackgroundPanel backgroundUrl="https://i.imghippo.com/files/tn9640iuI.jpg" />
+					<BackgroundPanel backgroundUrl="https://res.cloudinary.com/dlg9y5dfv/image/upload/v1748618916/munros/dtzz0gpoj0tnimam1p7b.jpg" />
 				</div>
 				<div className="w-full md:w-1/3 flex items-center justify-center">
-					<BackgroundPanel backgroundUrl="https://i.imghippo.com/files/jEN6727yk.jpg" />
+					<BackgroundPanel backgroundUrl="https://res.cloudinary.com/dlg9y5dfv/image/upload/v1748618269/munros/wotxdqiuzcbum5q6otb2.jpg" />
 				</div>
 			</div>
 		</div>
