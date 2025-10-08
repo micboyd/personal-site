@@ -47,7 +47,7 @@ const sampleData: ResumeData = {
 	name: 'Michael Boyd',
 	role: 'Full-Stack Software Engineer',
 	summary:
-		'Full-stack Software Engineer based in Edinburgh, with over 8 years of experience building and scaling production-level web applications. Proficient in JavaScript, TypeScript, Node.js, and MongoDB, with hands-on experience across frameworks including React, Angular, and Next.js. Adept at delivering enterprise solutions end-to-end from architecture and API design to deployment with a consistent focus on performance, maintainability, and clean, testable code.',
+		'Full-stack Software Engineer based in Edinburgh, with over 8 years of experience building and scaling production-level web applications. Proficient in JavaScript, TypeScript, Node.js, and MongoDB, with hands-on experience across frameworks including React, Angular, and Next.js. Adept at delivering enterprise solutions end-to-end from architecture and API design to deployment with a consistent focus on performance, maintainability, and clean, testable code. While my primary focus in my current role has been Angular, I am equally proficient and experienced in modern React.',
 	contact: {
 		email: 'michael_boyd@live.co.uk',
 	},
@@ -279,14 +279,12 @@ export default function ResumeTemplate({
 						</div>
 
 						<aside className="md:pl-12">
-							{/* NEW: Profile picture block */}
 							<div>
 								<ProfileAvatar name={name} imageUrl={profile?.imageUrl} alt={profile?.alt} />
 							</div>
-
 							<div className="mt-6">
 								<div className="text-xs tracking-[0.18em] uppercase text-zinc-500">Contact</div>
-								<div className="mt-3 space-y-1 text-[15px]">
+								<div className="mt-1 space-y-1 text-[15px]">
 									{contact?.phone && <div className="text-zinc-800">{contact.phone}</div>}
 									{contact?.email && (
 										<a className="text-blue-600 hover:underline" href={`mailto:${contact.email}`}>
@@ -354,21 +352,6 @@ export default function ResumeTemplate({
 						<aside className="md:col-span-1 md:pl-12">
 							<div>
 								<div className="flex items-center justify-between">
-									<SectionHeading>Education</SectionHeading>
-								</div>
-								<div className="mt-4 space-y-4 text-[15px]">
-									{(education ?? []).map((ed, i) => (
-										<div key={i}>
-											<div className="font-medium text-zinc-900">{ed.degree}</div>
-											<div className="text-zinc-700 text-[11px]">{ed.school}</div>
-											{ed.year && <div className="text-[11px] text-zinc-500">{ed.year}</div>}
-										</div>
-									))}
-								</div>
-							</div>
-
-							<div className="mt-10">
-								<div className="flex items-center justify-between">
 									<SectionHeading>Skills</SectionHeading>
 								</div>
 								<div className="mt-4 grid grid-cols-1 gap-6">
@@ -392,6 +375,20 @@ export default function ResumeTemplate({
 											</div>
 										</div>
 									)}
+								</div>
+							</div>
+							<div className="mt-10">
+								<div className="flex items-center justify-between">
+									<SectionHeading>Education</SectionHeading>
+								</div>
+								<div className="mt-4 space-y-4 text-[15px]">
+									{(education ?? []).map((ed, i) => (
+										<div key={i}>
+											<div className="font-medium text-zinc-900">{ed.degree}</div>
+											<div className="text-zinc-700 text-[11px]">{ed.school}</div>
+											{ed.year && <div className="text-[11px] text-zinc-500">{ed.year}</div>}
+										</div>
+									))}
 								</div>
 							</div>
 						</aside>
