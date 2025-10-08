@@ -7,6 +7,7 @@ export type ExperienceItem = {
 	start: string;
 	end: string;
 	bullets?: string[];
+	tech?: string[];
 };
 
 export type EducationItem = {
@@ -48,7 +49,6 @@ const sampleData: ResumeData = {
 	summary:
 		'Full-stack Software Engineer based in Edinburgh, with over 8 years of experience building and scaling production-level web applications. Proficient in JavaScript, TypeScript, Node.js, and MongoDB, with hands-on experience across frameworks including React, Angular, and Next.js. Adept at delivering enterprise solutions end-to-end from architecture and API design to deployment with a consistent focus on performance, maintainability, and clean, testable code.',
 	contact: {
-		phone: '07493944375',
 		email: 'michael_boyd@live.co.uk',
 	},
 	profile: {
@@ -70,6 +70,7 @@ const sampleData: ResumeData = {
 				'Contributed to planning, architecture, and estimation of new features in close collaboration with product and design.',
 				'Conducted code reviews and mentored junior developers to uphold best practices and code quality.',
 			],
+			tech: ['TypeScript', 'Angular', 'Figma', 'Docker', 'SQL', 'Azure', 'Unit Testing'],
 		},
 		{
 			title: 'Software Engineer',
@@ -85,6 +86,7 @@ const sampleData: ResumeData = {
 				'Rebuilt the automated onboarding journey to significantly improve customer experience.',
 				'Mentored junior developers and provided guidance within the team.',
 			],
+			tech: ['TypeScript', 'React', 'Angular', 'SCSS', 'AWS', 'Figma', 'Python', 'PostgreSQL'],
 		},
 		{
 			title: 'Web Developer',
@@ -98,6 +100,7 @@ const sampleData: ResumeData = {
 				'Built small websites and internal tools with Angular and related technologies.',
 				'Drove process improvements to streamline workflows across multiple teams.',
 			],
+			tech: ['TypeScript', 'Angular', 'SCSS', '.NET MVC', 'C#'],
 		},
 		{
 			title: 'Web Developer',
@@ -110,6 +113,7 @@ const sampleData: ResumeData = {
 				'Worked across modern and legacy stacks including React, Angular, Vue.js, and jQuery.',
 				'Acted in a reactive team to resolve outages and critical bugs, ensuring uptime and performance.',
 			],
+			tech: ['JavaScript', 'JQuery', 'SCSS', 'HTML', '.NET MVC', 'C#'],
 		},
 	],
 	education: [{ degree: 'Higher National Diploma, Computer Science', school: 'Edinburgh College', year: '2013' }],
@@ -128,6 +132,15 @@ const sampleData: ResumeData = {
 			'GraphQL',
 			'Cypress',
 			'Unit Testing',
+		],
+		professional: [
+			'Mentoring & Coaching',
+			'Collaboration',
+			'Stakeholder Management',
+			'Communication',
+			'Project Planning & Estimation',
+			'Product Thinking',
+			'Empathy',
 		],
 	},
 };
@@ -265,7 +278,7 @@ export default function ResumeTemplate({
 							)}
 						</div>
 
-						<aside className='md:pl-12'>
+						<aside className="md:pl-12">
 							{/* NEW: Profile picture block */}
 							<div>
 								<ProfileAvatar name={name} imageUrl={profile?.imageUrl} alt={profile?.alt} />
@@ -311,11 +324,27 @@ export default function ResumeTemplate({
 										<div className="text-[11px] text-zinc-500 mt-1">
 											{job.start} - {job.end}
 										</div>
-										<ul className="mt-3 list-disc pl-5 space-y-2 text-zinc-700">
-											{(job.bullets ?? []).map((b, i) => (
-												<li key={i}>{b}</li>
-											))}
-										</ul>
+
+										{(job.bullets?.length ?? 0) > 0 && (
+											<ul className="mt-3 list-disc pl-5 space-y-2 text-zinc-700">
+												{job.bullets!.map((b, i) => (
+													<li key={i}>{b}</li>
+												))}
+											</ul>
+										)}
+
+										{(job.tech?.length ?? 0) > 0 && (
+											<div className="mt-4">
+												<div className="text-[12px] font-medium uppercase tracking-wide text-zinc-500 mb-2">
+													Technology Used
+												</div>
+												<div className="flex flex-wrap gap-2">
+													{job.tech!.map((t, i) => (
+														<Tag key={i}>{t}</Tag>
+													))}
+												</div>
+											</div>
+										)}
 									</div>
 								))}
 							</div>
@@ -343,22 +372,21 @@ export default function ResumeTemplate({
 									<SectionHeading>Skills</SectionHeading>
 								</div>
 								<div className="mt-4 grid grid-cols-1 gap-6">
-									{skills?.professional && (
-										<div>
-											<h4 className="text-[13px] font-semibold text-zinc-900">Professional</h4>
-											<div className="mt-2 flex flex-wrap gap-2">
-												{skills.professional.map((s, i) => (
-													<Tag key={i}>{s}</Tag>
-												))}
-											</div>
-										</div>
-									)}
-
 									{skills?.technical && (
 										<div>
 											<h4 className="text-[13px] font-semibold text-zinc-900">Technical</h4>
 											<div className="mt-2 flex flex-wrap gap-2">
 												{skills.technical.map((s, i) => (
+													<Tag key={i}>{s}</Tag>
+												))}
+											</div>
+										</div>
+									)}
+									{skills?.professional && (
+										<div>
+											<h4 className="text-[13px] font-semibold text-zinc-900">Professional</h4>
+											<div className="mt-2 flex flex-wrap gap-2">
+												{skills.professional.map((s, i) => (
 													<Tag key={i}>{s}</Tag>
 												))}
 											</div>
