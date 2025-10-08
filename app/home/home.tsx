@@ -116,7 +116,7 @@ const sampleData: ResumeData = {
 			tech: ['JavaScript', 'JQuery', 'SCSS', 'HTML', '.NET MVC', 'C#'],
 		},
 	],
-	education: [{ degree: 'Higher National Diploma, Computer Science', school: 'Edinburgh College', year: '2013' }],
+	education: [{ degree: 'Higher National Diploma, Computing', school: 'Edinburgh College', year: '2013' }],
 	skills: {
 		technical: [
 			'React',
