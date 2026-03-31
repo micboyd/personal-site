@@ -203,13 +203,7 @@ function ProfileAvatar({
 	);
 }
 
-export default function ResumeTemplate({
-	data = sampleData,
-	showStickyHeader = false,
-}: {
-	data?: ResumeData;
-	showStickyHeader?: boolean;
-}): JSX.Element {
+export default function ResumeTemplate({ data = sampleData }: { data?: ResumeData }): JSX.Element {
 	const { name, role, summary, contact, experience, education, skills, profile } = data;
 
 	const [firstName, ...rest] = (name ?? '').split(' ');
@@ -217,92 +211,47 @@ export default function ResumeTemplate({
 
 	return (
 		<div className="min-h-screen bg-white">
-			{showStickyHeader && (
-				<div className="sticky top-0 z-50 bg-zinc-50/80 backdrop-blur-md supports-[backdrop-filter]:bg-zinc-50/60 border-b border-zinc-200">
-					<div className="mx-auto max-w-6xl px-6 py-3">
-						{/* Use the same 2fr/1fr grid as the body so columns line up */}
-						<div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] items-center gap-10">
-							{/* Col 1: name + role (with small avatar) */}
-							<div className="flex items-center gap-3 min-w-0">
-								<ProfileAvatar
-									name={name}
-									imageUrl={profile?.imageUrl}
-									alt={profile?.alt}
-									className="h-7 w-7 md:h-8 md:w-8 rounded-lg"
-								/>
-								<div className="flex items-baseline gap-3 min-w-0">
-									<span className="truncate font-semibold text-zinc-900">{name}</span>
-									{role && <span className="truncate text-xs text-zinc-600">{role}</span>}
-								</div>
-							</div>
+			<section className="bg-zinc-50 border-b border-zinc-100">
+				<div className="mx-auto max-w-6xl px-6 py-10 md:py-14">
+					<div className="flex flex-col md:flex-row md:items-start gap-8 md:gap-12">
+						{/* Avatar */}
+						<div className="shrink-0">
+							<ProfileAvatar name={name} imageUrl={profile?.imageUrl} alt={profile?.alt} />
+						</div>
 
-							{/* Col 2: contact, right-aligned to match sidebar */}
-							<div className="flex items-center justify-start md:justify-end gap-3 text-xs md:pl-12">
+						{/* Info */}
+						<div className="flex-1 min-w-0">
+							<h1 className="text-4xl md:text-5xl font-black tracking-tight text-zinc-900 leading-tight">
+								{firstName} {lastName}
+							</h1>
+							{role && (
+								<p className="mt-2 text-sm font-medium text-zinc-500 uppercase tracking-[0.16em]">
+									{role}
+								</p>
+							)}
+							{summary && (
+								<p className="mt-4 max-w-2xl text-zinc-600 leading-relaxed text-[15px]">{summary}</p>
+							)}
+
+							{/* Contact inline */}
+							<div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
 								{contact?.phone && <span className="text-zinc-700">{contact.phone}</span>}
-								{(contact?.email || contact?.website) && contact?.phone && (
-									<span className="text-zinc-400">·</span>
-								)}
 								{contact?.email && (
-									<a href={`mailto:${contact.email}`} className="text-blue-600 hover:underline">
+									<a className="text-blue-600 hover:underline" href={`mailto:${contact.email}`}>
 										{contact.email}
 									</a>
 								)}
-								{contact?.email && contact?.website && <span className="text-zinc-400">·</span>}
 								{contact?.website && (
 									<a
+										className="text-blue-600 hover:underline"
 										href={contact.website}
 										target="_blank"
-										rel="noreferrer"
-										className="text-blue-600 hover:underline">
+										rel="noreferrer">
 										{contact.website}
 									</a>
 								)}
 							</div>
 						</div>
-					</div>
-				</div>
-			)}
-
-			<section className="bg-zinc-50">
-				<div className="mx-auto max-w-6xl px-6 py-14 md:py-20">
-					<div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-10">
-						<div>
-							<h1 className="text-5xl md:text-6xl font-black tracking-tight text-zinc-900 leading-[0.95]">
-								{firstName}
-								<br />
-								{lastName}
-							</h1>
-							{role && <p className="mt-3 text-sm text-zinc-500 uppercase tracking-[0.18em]">{role}</p>}
-							{summary && (
-								<p className="mt-6 max-w-2xl text-zinc-700 leading-relaxed text-[15px]">{summary}</p>
-							)}
-						</div>
-
-						<aside className="md:pl-12">
-							<div>
-								<ProfileAvatar name={name} imageUrl={profile?.imageUrl} alt={profile?.alt} />
-							</div>
-							<div className="mt-6">
-								<div className="text-xs tracking-[0.18em] uppercase text-zinc-500">Contact</div>
-								<div className="mt-1 space-y-1 text-[15px]">
-									{contact?.phone && <div className="text-zinc-800">{contact.phone}</div>}
-									{contact?.email && (
-										<a className="text-blue-600 hover:underline" href={`mailto:${contact.email}`}>
-											{contact.email}
-										</a>
-									)}
-									{contact?.website && (
-										<a
-											className="text-blue-600 hover:underline"
-											href={contact.website}
-											target="_blank"
-											rel="noreferrer">
-											{contact.website}
-										</a>
-									)}
-								</div>
-							</div>
-						</aside>
 					</div>
 				</div>
 			</section>
