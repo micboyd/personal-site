@@ -76,7 +76,7 @@ export default function ProjectsPage() {
                 <div className="mx-auto max-w-6xl px-6 py-10 md:py-14">
                     <h1 className="text-4xl md:text-5xl font-black tracking-tight text-zinc-900">Projects</h1>
                     <p className="mt-3 text-zinc-500 text-[15px] max-w-xl">
-                        A selection of things I've built — personal projects and highlights from my professional work.
+                        A selection of things I&apos;ve built — personal projects and highlights from my professional work.
                     </p>
                 </div>
             </section>
