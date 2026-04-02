@@ -61,28 +61,25 @@ const projects: Project[] = [
 ];
 
 const statusStyles: Record<Project['status'], string> = {
-	Live: 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20',
-	'In Progress': 'bg-amber-500/10 text-amber-400 border border-amber-500/20',
-	Archived: 'bg-zinc-800 text-zinc-500 border border-zinc-700',
+	Live: 'bg-emerald-50 text-emerald-700',
+	'In Progress': 'bg-amber-50 text-amber-700',
+	Archived: 'bg-zinc-100 text-zinc-500',
 };
 
 const Tag = ({ children }: { children: React.ReactNode }) => (
-	<span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-[12px] font-medium bg-white/5 text-zinc-300 border border-white/10">
+	<span className="inline-flex items-center rounded-full px-3 py-1 text-[12px] font-medium bg-zinc-100 text-zinc-700">
 		{children}
 	</span>
 );
 
 export default function ProjectsPage() {
 	return (
-		<div className="min-h-screen bg-zinc-950">
+		<div className="min-h-screen bg-[#F7F7F7]">
 			{/* Header */}
-			<section className="relative overflow-hidden bg-zinc-950 border-b border-white/5">
-				<div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_-10%,rgba(139,92,246,0.08),transparent)]" />
-				<div className="relative mx-auto max-w-6xl px-6 py-14 md:py-20">
-					<h1 className="text-4xl md:text-6xl font-black tracking-tight text-white leading-[1.05]">
-						Projects
-					</h1>
-					<p className="mt-3 text-zinc-400 text-[15px] max-w-xl leading-relaxed">
+			<section className="bg-white border-b border-zinc-200">
+				<div className="mx-auto max-w-6xl px-6 py-12 md:py-16">
+					<h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-zinc-900">Projects</h1>
+					<p className="mt-3 text-[#717171] text-[15px] max-w-xl leading-relaxed">
 						A selection of things I&apos;ve built — personal projects and highlights from my professional
 						work.
 					</p>
@@ -90,23 +87,21 @@ export default function ProjectsPage() {
 			</section>
 
 			{/* Cards */}
-			<section className="mx-auto max-w-6xl px-6 py-14">
+			<section className="mx-auto max-w-6xl px-6 py-10 md:py-14">
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 					{projects.map((project) => (
 						<div
 							key={project.name}
-							className="group rounded-2xl bg-zinc-900 border border-white/[0.08] p-6 flex flex-col gap-4 hover:border-violet-500/25 hover:shadow-xl hover:shadow-violet-950/30 transition-all duration-300">
+							className="group bg-white rounded-2xl border border-zinc-200 p-6 flex flex-col gap-4 hover:shadow-lg transition-shadow duration-200">
 							<div className="flex items-start justify-between gap-3">
-								<h2 className="font-semibold text-zinc-100 text-[17px] leading-snug group-hover:text-white transition-colors">
-									{project.name}
-								</h2>
+								<h2 className="font-bold text-zinc-900 text-[17px] leading-snug">{project.name}</h2>
 								<span
-									className={`shrink-0 text-[11px] font-medium px-2.5 py-1 rounded-full ${statusStyles[project.status]}`}>
+									className={`shrink-0 text-[11px] font-semibold px-2.5 py-1 rounded-full ${statusStyles[project.status]}`}>
 									{project.status}
 								</span>
 							</div>
 
-							<p className="text-zinc-500 text-[14px] leading-relaxed">{project.description}</p>
+							<p className="text-[#717171] text-[14px] leading-relaxed">{project.description}</p>
 
 							<div className="flex flex-wrap gap-1.5 mt-auto pt-1">
 								{project.tech.map((t) => (
@@ -119,7 +114,7 @@ export default function ProjectsPage() {
 									href={project.url}
 									target="_blank"
 									rel="noreferrer"
-									className="text-[13px] font-medium text-violet-400 hover:text-violet-300 transition-colors inline-flex items-center gap-1">
+									className="text-[13px] font-semibold text-[#FF385C] hover:text-[#D93349] transition-colors inline-flex items-center gap-1">
 									Visit project →
 								</a>
 							)}

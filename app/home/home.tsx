@@ -146,18 +146,13 @@ const sampleData: ResumeData = {
 };
 
 const Tag = ({ children }: { children: React.ReactNode }) => (
-	<span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-[12px] font-medium bg-white/5 text-zinc-300 border border-white/10">
+	<span className="inline-flex items-center rounded-full px-3 py-1 text-[12px] font-medium bg-zinc-100 text-zinc-700">
 		{children}
 	</span>
 );
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
-	return (
-		<div className="flex items-center gap-4 mb-7">
-			<h3 className="text-[11px] tracking-[0.2em] uppercase text-zinc-500 font-semibold shrink-0">{children}</h3>
-			<div className="flex-1 h-px bg-white/5" />
-		</div>
-	);
+	return <h3 className="text-base font-bold text-zinc-900 mb-5">{children}</h3>;
 }
 
 function ProfileAvatar({
@@ -184,7 +179,7 @@ function ProfileAvatar({
 			<img
 				src={imageUrl}
 				alt={alt || `${name} profile photo`}
-				className={`h-28 w-28 md:h-36 md:w-36 rounded-2xl object-cover ring-1 ring-white/10 shadow-xl ${className}`}
+				className={`h-28 w-28 md:h-32 md:w-32 rounded-2xl object-cover shadow-md ${className}`}
 				loading="lazy"
 			/>
 		);
@@ -192,7 +187,7 @@ function ProfileAvatar({
 
 	return (
 		<div
-			className={`h-28 w-28 md:h-36 md:w-36 rounded-2xl grid place-items-center ring-1 ring-white/10 bg-zinc-800 text-zinc-300 font-semibold text-3xl shadow-xl ${className}`}
+			className={`h-28 w-28 md:h-32 md:w-32 rounded-2xl grid place-items-center bg-zinc-200 text-zinc-600 font-semibold text-3xl shadow-md ${className}`}
 			aria-label={`${name} initials avatar`}>
 			{initials}
 		</div>
@@ -202,55 +197,48 @@ function ProfileAvatar({
 export default function ResumeTemplate({ data = sampleData }: { data?: ResumeData }): JSX.Element {
 	const { name, role, summary, contact, experience, education, skills, profile } = data;
 
-	const [firstName, ...rest] = (name ?? '').split(' ');
-	const lastName = rest.join(' ');
-
 	return (
-		<div className="min-h-screen bg-zinc-950">
+		<div className="min-h-screen bg-[#F7F7F7]">
 			{/* Hero */}
-			<section className="relative overflow-hidden bg-zinc-950 border-b border-white/5">
-				<div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_-10%,rgba(139,92,246,0.08),transparent)]" />
-				<div className="relative mx-auto max-w-6xl px-6 py-14 md:py-20">
-					<div className="flex flex-col md:flex-row md:items-start gap-8 md:gap-14">
+			<section className="bg-white border-b border-zinc-200">
+				<div className="mx-auto max-w-6xl px-6 py-12 md:py-16">
+					<div className="flex flex-col md:flex-row md:items-start gap-8 md:gap-12">
 						<div className="shrink-0">
 							<ProfileAvatar name={name} imageUrl={profile?.imageUrl} alt={profile?.alt} />
 						</div>
 
 						<div className="flex-1 min-w-0">
-							<h1 className="text-4xl md:text-6xl font-black tracking-tight leading-[1.05]">
-								<span className="text-white">{firstName} </span>
-								<span className="bg-gradient-to-r from-zinc-100 to-zinc-500 bg-clip-text text-transparent">
-									{lastName}
-								</span>
+							<h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-zinc-900 leading-tight">
+								{name}
 							</h1>
 
 							{role && (
-								<p className="mt-3 text-[12px] font-semibold text-zinc-500 uppercase tracking-[0.22em]">
+								<p className="mt-2 text-sm font-medium text-[#717171] uppercase tracking-[0.15em]">
 									{role}
 								</p>
 							)}
 
 							{summary && (
-								<p className="mt-5 max-w-2xl text-zinc-400 leading-relaxed text-[15px]">{summary}</p>
+								<p className="mt-4 max-w-2xl text-[#717171] leading-relaxed text-[15px]">{summary}</p>
 							)}
 
 							<div className="mt-6 flex flex-wrap items-center gap-3">
 								{contact?.email && (
 									<a
 										href={`mailto:${contact.email}`}
-										className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-zinc-900 text-sm font-semibold hover:bg-zinc-100 transition-colors">
-										Get in touch →
+										className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#FF385C] text-white text-sm font-semibold hover:bg-[#D93349] transition-colors">
+										Get in touch
 									</a>
 								)}
 								{contact?.phone && (
-									<span className="text-zinc-500 text-sm">{contact.phone}</span>
+									<span className="text-[#717171] text-sm">{contact.phone}</span>
 								)}
 								{contact?.website && (
 									<a
 										href={contact.website}
 										target="_blank"
 										rel="noreferrer"
-										className="text-zinc-400 text-sm hover:text-zinc-200 transition-colors">
+										className="text-[#FF385C] text-sm font-medium hover:underline">
 										{contact.website}
 									</a>
 								)}
@@ -261,40 +249,38 @@ export default function ResumeTemplate({ data = sampleData }: { data?: ResumeDat
 			</section>
 
 			{/* Body */}
-			<section className="mx-auto max-w-6xl px-6 py-14 md:py-20">
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
+			<section className="mx-auto max-w-6xl px-6 py-10 md:py-14">
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
 					{/* Experience */}
-					<main className="md:col-span-2">
+					<main className="md:col-span-2 space-y-6">
 						<SectionHeading>Experience</SectionHeading>
 
 						<div className="relative">
 							{/* Vertical timeline line */}
-							<div className="absolute left-[7px] top-2 bottom-4 w-px bg-white/5" />
+							<div className="absolute left-[7px] top-2 bottom-4 w-px bg-zinc-200" />
 
-							<div className="space-y-10">
+							<div className="space-y-8">
 								{(experience ?? []).map((job, idx) => (
 									<div key={idx} className="relative pl-8">
 										{/* Timeline dot */}
-										<div className="absolute left-0 top-[6px] w-[15px] h-[15px] rounded-full border-2 border-violet-500/40 bg-zinc-950" />
+										<div className="absolute left-0 top-[6px] w-[15px] h-[15px] rounded-full bg-[#FF385C]" />
 
 										<div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-0.5 sm:gap-3">
-											<h4 className="font-semibold text-zinc-100 text-[15px]">{job.title}</h4>
-											<span className="text-[11px] text-zinc-600 shrink-0 tabular-nums">
+											<h4 className="font-semibold text-zinc-900 text-[15px]">{job.title}</h4>
+											<span className="text-[11px] text-[#717171] shrink-0 tabular-nums">
 												{job.start} – {job.end}
 											</span>
 										</div>
 
-										<div className="text-[13px] text-zinc-500 mt-0.5">
+										<div className="text-[13px] text-[#717171] mt-0.5">
 											{job.company} · {job.location}
 										</div>
 
 										{(job.bullets?.length ?? 0) > 0 && (
 											<ul className="mt-3 space-y-2">
 												{job.bullets!.map((b, i) => (
-													<li
-														key={i}
-														className="text-[14px] text-zinc-400 leading-relaxed flex gap-2.5">
-														<span className="text-zinc-700 shrink-0 mt-[3px]">–</span>
+													<li key={i} className="text-[14px] text-[#717171] leading-relaxed flex gap-2.5">
+														<span className="text-zinc-300 shrink-0 mt-[3px]">–</span>
 														<span>{b}</span>
 													</li>
 												))}
@@ -315,14 +301,14 @@ export default function ResumeTemplate({ data = sampleData }: { data?: ResumeDat
 					</main>
 
 					{/* Sidebar */}
-					<aside className="md:col-span-1 space-y-12">
+					<aside className="md:col-span-1 space-y-8">
 						{/* Skills */}
 						<div>
 							<SectionHeading>Skills</SectionHeading>
-							<div className="space-y-6">
+							<div className="space-y-5">
 								{skills?.technical && (
 									<div>
-										<h4 className="text-[12px] font-semibold text-zinc-400 uppercase tracking-widest mb-3">
+										<h4 className="text-[12px] font-semibold text-zinc-500 uppercase tracking-widest mb-3">
 											Technical
 										</h4>
 										<div className="flex flex-wrap gap-1.5">
@@ -334,7 +320,7 @@ export default function ResumeTemplate({ data = sampleData }: { data?: ResumeDat
 								)}
 								{skills?.professional && (
 									<div>
-										<h4 className="text-[12px] font-semibold text-zinc-400 uppercase tracking-widest mb-3">
+										<h4 className="text-[12px] font-semibold text-zinc-500 uppercase tracking-widest mb-3">
 											Professional
 										</h4>
 										<div className="flex flex-wrap gap-1.5">
@@ -353,9 +339,9 @@ export default function ResumeTemplate({ data = sampleData }: { data?: ResumeDat
 							<div className="space-y-4">
 								{(education ?? []).map((ed, i) => (
 									<div key={i}>
-										<div className="font-medium text-zinc-200 text-[15px]">{ed.degree}</div>
-										<div className="text-zinc-500 text-[13px] mt-0.5">{ed.school}</div>
-										{ed.year && <div className="text-zinc-600 text-[12px] mt-0.5">{ed.year}</div>}
+										<div className="font-semibold text-zinc-900 text-[15px]">{ed.degree}</div>
+										<div className="text-[#717171] text-[13px] mt-0.5">{ed.school}</div>
+										{ed.year && <div className="text-zinc-400 text-[12px] mt-0.5">{ed.year}</div>}
 									</div>
 								))}
 							</div>
