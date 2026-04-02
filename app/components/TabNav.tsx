@@ -12,18 +12,19 @@ export default function TabNav() {
 	const pathname = usePathname();
 
 	return (
-		<nav className="flex justify-center px-6 pt-8 pb-0 bg-zinc-50">
-			<div className="flex gap-1 bg-zinc-100 rounded-full p-1">
+		<nav className="sticky top-0 z-50 flex justify-center px-6 py-4 bg-zinc-950/80 backdrop-blur-xl border-b border-white/5">
+			<div className="flex gap-1 p-1 rounded-full bg-white/5 border border-white/10">
 				{tabs.map(({ label, href }) => {
-					const isActive = pathname === href;
+					const isActive =
+						href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(href + '/');
 					return (
 						<Link
 							key={href}
 							href={href}
-							className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-150 ${
+							className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
 								isActive
 									? 'bg-white text-zinc-900 shadow-sm'
-									: 'text-zinc-500 hover:text-zinc-700'
+									: 'text-zinc-400 hover:text-zinc-100 hover:bg-white/5'
 							}`}>
 							{label}
 						</Link>

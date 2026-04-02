@@ -28,7 +28,7 @@ export type Contact = {
 };
 
 export type Profile = {
-	imageUrl?: string; // If omitted, we'll show initials fallback
+	imageUrl?: string;
 	alt?: string;
 };
 
@@ -40,14 +40,14 @@ export interface ResumeData {
 	experience?: ExperienceItem[];
 	education?: EducationItem[];
 	skills?: Skills;
-	profile?: Profile; // <-- NEW
+	profile?: Profile;
 }
 
 const sampleData: ResumeData = {
 	name: 'Michael Boyd',
 	role: 'Full-Stack Software Engineer',
 	summary:
-		'Full-stack Software Engineer based in Edinburgh, with over 8 years of experience building and scaling production-level web applications. Proficient in JavaScript, TypeScript, Node.js, and MongoDB, with hands-on experience across frameworks including React, Angular, and Next.js. Adept at delivering enterprise solutions end-to-end from architecture and API design to deployment with a consistent focus on performance, maintainability, and clean, testable code. While my primary focus in my current role has been Angular, I am equally proficient and experienced in modern React.',
+		'Full-stack Software Engineer based in Edinburgh with 8+ years of experience building and scaling production web applications. Proficient in TypeScript, JavaScript, Node.js, and MongoDB, with deep experience across React, Angular, and Next.js. Focused on delivering well-architected, high-quality software — from API design and system architecture through to deployment and long-term maintainability.',
 	contact: {
 		email: 'michael_boyd@live.co.uk',
 	},
@@ -63,12 +63,12 @@ const sampleData: ResumeData = {
 			start: 'Oct 2021',
 			end: 'Present',
 			bullets: [
-				'Rebuilt the CMS from the ground up through multiple versions, enhancing UX and overall functionality.',
-				'Implemented a new core page management system to improve performance and handle large datasets.',
-				'Built multi-locale content capabilities to enable efficient page creation across languages and regions.',
-				'Improved team development processes to make workflows more efficient and developer-friendly.',
-				'Contributed to planning, architecture, and estimation of new features in close collaboration with product and design.',
-				'Conducted code reviews and mentored junior developers to uphold best practices and code quality.',
+				'Rebuilt the CMS platform across multiple major versions, improving UX, performance, and overall product quality.',
+				'Designed and implemented a new page management engine capable of handling large datasets at scale.',
+				'Introduced multi-locale content authoring to support efficient page creation across languages and regions.',
+				'Improved engineering team workflows through better tooling, standards, and development practices.',
+				'Worked closely with product and design on feature planning, architecture decisions, and delivery estimation.',
+				'Mentored junior developers through code reviews and regular feedback, raising overall code quality across the team.',
 			],
 			tech: ['TypeScript', 'Angular', 'Figma', 'Docker', 'SQL', 'Azure', 'Unit Testing'],
 		},
@@ -79,12 +79,12 @@ const sampleData: ResumeData = {
 			start: 'Nov 2020',
 			end: 'Oct 2021',
 			bullets: [
-				'Developed a new ‘rate card’ feature so Airbnb hosts could set service rates in the central admin system.',
-				'Built multiple complex features in the Customer Portal using React.',
-				'Redeveloped key admin components from Django templates to Angular with Django REST Framework back end.',
-				'Led redesign and rebuild of the main company website, improving look and functionality.',
-				'Rebuilt the automated onboarding journey to significantly improve customer experience.',
-				'Mentored junior developers and provided guidance within the team.',
+				"Built a 'rate card' feature enabling Airbnb hosts to configure and manage service pricing within the central admin system.",
+				'Delivered multiple product features in the React-based customer portal, improving usability and functionality.',
+				'Migrated key admin interfaces from Django templates to Angular, backed by a Django REST Framework API.',
+				'Led the redesign and full rebuild of the company marketing website, improving performance and visual quality.',
+				'Rebuilt the automated customer onboarding journey, reducing friction and improving the end-to-end signup experience.',
+				'Provided mentorship and technical guidance to junior developers across the team.',
 			],
 			tech: ['TypeScript', 'React', 'Angular', 'SCSS', 'AWS', 'Figma', 'Python', 'PostgreSQL'],
 		},
@@ -95,10 +95,10 @@ const sampleData: ResumeData = {
 			start: 'Oct 2018',
 			end: 'Nov 2020',
 			bullets: [
-				'Delivered an NHS platform in .NET MVC for tracking ECT patients across clinics in Scotland.',
-				'Led a comprehensive rebuild of the Tesco Bank website, across front end, back end, and CMS integration.',
-				'Built small websites and internal tools with Angular and related technologies.',
-				'Drove process improvements to streamline workflows across multiple teams.',
+				'Delivered a clinical tracking platform for NHS Scotland in .NET MVC, supporting ECT patient management across multiple clinics.',
+				'Led the full rebuild of the Tesco Bank public website, owning the front end, back end, and CMS integration.',
+				'Delivered client websites and internal tooling in Angular across several concurrent projects.',
+				'Identified and implemented process improvements that improved delivery efficiency across multiple teams.',
 			],
 			tech: ['TypeScript', 'Angular', 'SCSS', '.NET MVC', 'C#'],
 		},
@@ -109,9 +109,9 @@ const sampleData: ResumeData = {
 			start: 'Jun 2016',
 			end: 'Oct 2018',
 			bullets: [
-				'Developed and maintained greenfield and high-traffic sites for clients including Expedia, Lloyds Bank, Bank of Scotland, Greyhound Buses, and Tottenham Hotspur.',
-				'Worked across modern and legacy stacks including React, Angular, Vue.js, and jQuery.',
-				'Acted in a reactive team to resolve outages and critical bugs, ensuring uptime and performance.',
+				'Delivered and maintained sites for high-profile clients including Expedia, Lloyds Bank, Bank of Scotland, Greyhound Buses, and Tottenham Hotspur.',
+				"Worked across a broad range of stacks — React, Angular, Vue.js, and jQuery — adapting quickly to each project's requirements.",
+				'Supported production systems under time pressure, resolving outages and critical bugs to maintain uptime and stability.',
 			],
 			tech: ['JavaScript', 'JQuery', 'SCSS', 'HTML', '.NET MVC', 'C#'],
 		},
@@ -145,26 +145,21 @@ const sampleData: ResumeData = {
 	},
 };
 
-function SectionHeading({ children }: { children: React.ReactNode }) {
-	return <h3 className="text-xs tracking-[0.18em] uppercase text-zinc-500 font-medium">{children}</h3>;
-}
-
-function ItemHeading({ title, meta }: { title: string; meta?: string }) {
-	return (
-		<div className="flex items-baseline justify-between gap-3">
-			<h4 className="font-semibold text-zinc-900 leading-tight">{title}</h4>
-			{meta ? <span className="text-[11px] text-zinc-500 shrink-0">{meta}</span> : null}
-		</div>
-	);
-}
-
 const Tag = ({ children }: { children: React.ReactNode }) => (
-	<span className="inline-flex items-center rounded-full px-3 py-1 text-[13px] font-medium bg-blue-50 text-blue-700 border border-blue-200">
+	<span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-[12px] font-medium bg-white/5 text-zinc-300 border border-white/10">
 		{children}
 	</span>
 );
 
-// --- NEW: Avatar with image or initials fallback ---
+function SectionHeading({ children }: { children: React.ReactNode }) {
+	return (
+		<div className="flex items-center gap-4 mb-7">
+			<h3 className="text-[11px] tracking-[0.2em] uppercase text-zinc-500 font-semibold shrink-0">{children}</h3>
+			<div className="flex-1 h-px bg-white/5" />
+		</div>
+	);
+}
+
 function ProfileAvatar({
 	name,
 	imageUrl,
@@ -189,7 +184,7 @@ function ProfileAvatar({
 			<img
 				src={imageUrl}
 				alt={alt || `${name} profile photo`}
-				className={`h-28 w-28 md:h-32 md:w-32 rounded-2xl object-cover ring-1 ring-zinc-200 shadow-sm ${className}`}
+				className={`h-28 w-28 md:h-36 md:w-36 rounded-2xl object-cover ring-1 ring-white/10 shadow-xl ${className}`}
 				loading="lazy"
 			/>
 		);
@@ -197,7 +192,7 @@ function ProfileAvatar({
 
 	return (
 		<div
-			className={`h-28 w-28 md:h-32 md:w-32 rounded-2xl grid place-items-center ring-1 ring-zinc-200 bg-gradient-to-br from-zinc-100 to-zinc-200 text-zinc-700 font-semibold text-3xl shadow-sm ${className}`}
+			className={`h-28 w-28 md:h-36 md:w-36 rounded-2xl grid place-items-center ring-1 ring-white/10 bg-zinc-800 text-zinc-300 font-semibold text-3xl shadow-xl ${className}`}
 			aria-label={`${name} initials avatar`}>
 			{initials}
 		</div>
@@ -211,43 +206,51 @@ export default function ResumeTemplate({ data = sampleData }: { data?: ResumeDat
 	const lastName = rest.join(' ');
 
 	return (
-		<div className="min-h-screen bg-white">
-			<section className="bg-zinc-50 border-b border-zinc-100">
-				<div className="mx-auto max-w-6xl px-6 py-10 md:py-14">
-					<div className="flex flex-col md:flex-row md:items-start gap-8 md:gap-12">
-						{/* Avatar */}
+		<div className="min-h-screen bg-zinc-950">
+			{/* Hero */}
+			<section className="relative overflow-hidden bg-zinc-950 border-b border-white/5">
+				<div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_-10%,rgba(139,92,246,0.08),transparent)]" />
+				<div className="relative mx-auto max-w-6xl px-6 py-14 md:py-20">
+					<div className="flex flex-col md:flex-row md:items-start gap-8 md:gap-14">
 						<div className="shrink-0">
 							<ProfileAvatar name={name} imageUrl={profile?.imageUrl} alt={profile?.alt} />
 						</div>
 
-						{/* Info */}
 						<div className="flex-1 min-w-0">
-							<h1 className="text-4xl md:text-5xl font-black tracking-tight text-zinc-900 leading-tight">
-								{firstName} {lastName}
+							<h1 className="text-4xl md:text-6xl font-black tracking-tight leading-[1.05]">
+								<span className="text-white">{firstName} </span>
+								<span className="bg-gradient-to-r from-zinc-100 to-zinc-500 bg-clip-text text-transparent">
+									{lastName}
+								</span>
 							</h1>
+
 							{role && (
-								<p className="mt-2 text-sm font-medium text-zinc-500 uppercase tracking-[0.16em]">
+								<p className="mt-3 text-[12px] font-semibold text-zinc-500 uppercase tracking-[0.22em]">
 									{role}
 								</p>
 							)}
+
 							{summary && (
-								<p className="mt-4 max-w-2xl text-zinc-600 leading-relaxed text-[15px]">{summary}</p>
+								<p className="mt-5 max-w-2xl text-zinc-400 leading-relaxed text-[15px]">{summary}</p>
 							)}
 
-							{/* Contact inline */}
-							<div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
-								{contact?.phone && <span className="text-zinc-700">{contact.phone}</span>}
+							<div className="mt-6 flex flex-wrap items-center gap-3">
 								{contact?.email && (
-									<a className="text-blue-600 hover:underline" href={`mailto:${contact.email}`}>
-										{contact.email}
+									<a
+										href={`mailto:${contact.email}`}
+										className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-zinc-900 text-sm font-semibold hover:bg-zinc-100 transition-colors">
+										Get in touch →
 									</a>
+								)}
+								{contact?.phone && (
+									<span className="text-zinc-500 text-sm">{contact.phone}</span>
 								)}
 								{contact?.website && (
 									<a
-										className="text-blue-600 hover:underline"
 										href={contact.website}
 										target="_blank"
-										rel="noreferrer">
+										rel="noreferrer"
+										className="text-zinc-400 text-sm hover:text-zinc-200 transition-colors">
 										{contact.website}
 									</a>
 								)}
@@ -257,92 +260,107 @@ export default function ResumeTemplate({ data = sampleData }: { data?: ResumeDat
 				</div>
 			</section>
 
-			<section className="bg-white">
-				<div className="mx-auto max-w-6xl px-6 py-12 md:py-16">
-					<div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-						{/* Main experience column with right border on desktop */}
-						<main className="md:col-span-2 md:pr-12 md:border-r md:border-zinc-200">
-							<div className="flex items-center justify-between">
-								<SectionHeading>Experience</SectionHeading>
-							</div>
-							<div className="mt-4 space-y-8">
+			{/* Body */}
+			<section className="mx-auto max-w-6xl px-6 py-14 md:py-20">
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
+					{/* Experience */}
+					<main className="md:col-span-2">
+						<SectionHeading>Experience</SectionHeading>
+
+						<div className="relative">
+							{/* Vertical timeline line */}
+							<div className="absolute left-[7px] top-2 bottom-4 w-px bg-white/5" />
+
+							<div className="space-y-10">
 								{(experience ?? []).map((job, idx) => (
-									<div key={idx} className="text-[15px]">
-										<ItemHeading title={job.title} meta={`${job.company} | ${job.location}`} />
-										<div className="text-[11px] text-zinc-500 mt-1">
-											{job.start} - {job.end}
+									<div key={idx} className="relative pl-8">
+										{/* Timeline dot */}
+										<div className="absolute left-0 top-[6px] w-[15px] h-[15px] rounded-full border-2 border-violet-500/40 bg-zinc-950" />
+
+										<div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-0.5 sm:gap-3">
+											<h4 className="font-semibold text-zinc-100 text-[15px]">{job.title}</h4>
+											<span className="text-[11px] text-zinc-600 shrink-0 tabular-nums">
+												{job.start} – {job.end}
+											</span>
+										</div>
+
+										<div className="text-[13px] text-zinc-500 mt-0.5">
+											{job.company} · {job.location}
 										</div>
 
 										{(job.bullets?.length ?? 0) > 0 && (
-											<ul className="mt-3 list-disc pl-5 space-y-2 text-zinc-700">
+											<ul className="mt-3 space-y-2">
 												{job.bullets!.map((b, i) => (
-													<li key={i}>{b}</li>
+													<li
+														key={i}
+														className="text-[14px] text-zinc-400 leading-relaxed flex gap-2.5">
+														<span className="text-zinc-700 shrink-0 mt-[3px]">–</span>
+														<span>{b}</span>
+													</li>
 												))}
 											</ul>
 										)}
 
 										{(job.tech?.length ?? 0) > 0 && (
-											<div className="mt-4">
-												<div className="text-[12px] font-medium uppercase tracking-wide text-zinc-500 mb-2">
-													Technology Used
-												</div>
-												<div className="flex flex-wrap gap-2">
-													{job.tech!.map((t, i) => (
-														<Tag key={i}>{t}</Tag>
-													))}
-												</div>
+											<div className="mt-4 flex flex-wrap gap-1.5">
+												{job.tech!.map((t, i) => (
+													<Tag key={i}>{t}</Tag>
+												))}
 											</div>
 										)}
 									</div>
 								))}
 							</div>
-						</main>
+						</div>
+					</main>
 
-						{/* Sidebar column */}
-						<aside className="md:col-span-1 md:pl-12">
-							<div>
-								<div className="flex items-center justify-between">
-									<SectionHeading>Skills</SectionHeading>
-								</div>
-								<div className="mt-4 grid grid-cols-1 gap-6">
-									{skills?.technical && (
-										<div>
-											<h4 className="text-[13px] font-semibold text-zinc-900">Technical</h4>
-											<div className="mt-2 flex flex-wrap gap-2">
-												{skills.technical.map((s, i) => (
-													<Tag key={i}>{s}</Tag>
-												))}
-											</div>
+					{/* Sidebar */}
+					<aside className="md:col-span-1 space-y-12">
+						{/* Skills */}
+						<div>
+							<SectionHeading>Skills</SectionHeading>
+							<div className="space-y-6">
+								{skills?.technical && (
+									<div>
+										<h4 className="text-[12px] font-semibold text-zinc-400 uppercase tracking-widest mb-3">
+											Technical
+										</h4>
+										<div className="flex flex-wrap gap-1.5">
+											{skills.technical.map((s, i) => (
+												<Tag key={i}>{s}</Tag>
+											))}
 										</div>
-									)}
-									{skills?.professional && (
-										<div>
-											<h4 className="text-[13px] font-semibold text-zinc-900">Professional</h4>
-											<div className="mt-2 flex flex-wrap gap-2">
-												{skills.professional.map((s, i) => (
-													<Tag key={i}>{s}</Tag>
-												))}
-											</div>
+									</div>
+								)}
+								{skills?.professional && (
+									<div>
+										<h4 className="text-[12px] font-semibold text-zinc-400 uppercase tracking-widest mb-3">
+											Professional
+										</h4>
+										<div className="flex flex-wrap gap-1.5">
+											{skills.professional.map((s, i) => (
+												<Tag key={i}>{s}</Tag>
+											))}
 										</div>
-									)}
-								</div>
+									</div>
+								)}
 							</div>
-							<div className="mt-10">
-								<div className="flex items-center justify-between">
-									<SectionHeading>Education</SectionHeading>
-								</div>
-								<div className="mt-4 space-y-4 text-[15px]">
-									{(education ?? []).map((ed, i) => (
-										<div key={i}>
-											<div className="font-medium text-zinc-900">{ed.degree}</div>
-											<div className="text-zinc-700 text-[11px]">{ed.school}</div>
-											{ed.year && <div className="text-[11px] text-zinc-500">{ed.year}</div>}
-										</div>
-									))}
-								</div>
+						</div>
+
+						{/* Education */}
+						<div>
+							<SectionHeading>Education</SectionHeading>
+							<div className="space-y-4">
+								{(education ?? []).map((ed, i) => (
+									<div key={i}>
+										<div className="font-medium text-zinc-200 text-[15px]">{ed.degree}</div>
+										<div className="text-zinc-500 text-[13px] mt-0.5">{ed.school}</div>
+										{ed.year && <div className="text-zinc-600 text-[12px] mt-0.5">{ed.year}</div>}
+									</div>
+								))}
 							</div>
-						</aside>
-					</div>
+						</div>
+					</aside>
 				</div>
 			</section>
 		</div>
