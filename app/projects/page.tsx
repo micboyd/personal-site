@@ -7,6 +7,23 @@ type Project = {
 };
 
 const projects: Project[] = [
+    	{
+		name: 'Condition Tracker',
+		description: `A platform for tracking an athletes strength, conditioning & nutrition. Built for my own rugby career, but able to use across any type of physical / sport training.`,
+		tech: [
+			'Angular',
+			'TypeScript',
+			'Tailwind CSS',
+			'Node.js',
+			'Express',
+			'MongoDB',
+			'JWT',
+			'Heroku',
+			'Netlify',
+		],
+		status: 'Live',
+		url: 'https://www.conditiontrack.com',
+	},
 	{
 		name: 'Munro Locator',
 		description: `Despite the name — a legacy from its original incarnation — this app has been fully rebuilt as a general-purpose mountain tracker and trip planner, supporting any mountain classification worldwide (Munros, Corbetts, Wainwrights, and beyond). Users can browse a searchable mountain library with category and height filtering, plan future hikes with dates, log completed summits with photos and ratings, and organise outings into trip plans. The dashboard surfaces personal stats (total meters climbed, completion history, average ratings) and a recent activity feed. Planning tools include a Naismith route-time calculator, a Mapbox-powered drive-time estimator, an elevation profile viewer, and live weather forecasts via Open-Meteo. An interactive Leaflet map lets users visualise and filter mountains spatially. Goal tracking rounds out a full end-to-end experience from discovery to summit.`,
